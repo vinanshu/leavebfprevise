@@ -1,0 +1,37 @@
+name: Check Pending Requests and Create Notifications
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check-requests:
+    runs-on: ubuntu-latest
+    
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      ADMIN_USER_ID: 'ddfe247f-234e-4960-a17d-29e0c929e1f1'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Debug environment variables
+        run: |
+          echo "SUPABASE_URL length: ${#SUPABASE_URL}"
+          echo "SUPABASE_SERVICE_ROLE_KEY length: ${#SUPABASE_SERVICE_ROLE_KEY}"
+          echo "SUPABASE_SERVICE_ROLE_KEY starts with 'eyJ'?: ${SUPABASE_SERVICE_ROLE_KEY:0:3}"
+      
+      - name: Install dependencies in server folder
+        working-directory: ./server
+        run: npm ci
+      
+      - name: Run notification checker
+        working-directory: ./server
+        run: node cron/check-pending-requests.js

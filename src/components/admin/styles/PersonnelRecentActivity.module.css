@@ -1,0 +1,1011 @@
+/* PersonnelRecentActivity.module.css */
+
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.headerTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.username {
+  color: #666;
+}
+
+.adminBadge {
+  background: #e74c3c;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Admin Banner */
+.adminBanner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.adminIcon {
+  font-size: 1.2rem;
+}
+
+/* Filter Controls */
+.filterControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filterGroup label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.filterSelect {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 0.9rem;
+  min-width: 150px;
+}
+
+.filterSelect:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.activitiesCount {
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.activitiesCount strong {
+  color: #2c3e50;
+}
+
+/* Table Styles */
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+.activityTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.activityTable thead {
+  background: #3498db;
+}
+
+.activityTable th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  border-bottom: 2px solid #2980b9;
+}
+
+.activityTable tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #eee;
+}
+
+.activityTable tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.activityTable td {
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+
+/* Table Cell Styles */
+.activityTypeCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.activityIcon {
+  font-size: 1.2rem;
+}
+
+.descriptionCell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.descriptionCell strong {
+  color: #2c3e50;
+}
+
+.descriptionCell small {
+  color: #7f8c8d;
+  font-size: 0.85rem;
+}
+
+.actionByCell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.actionByCell strong {
+  color: #2c3e50;
+}
+
+.actionByCell small {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.timestampCell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timestampCell strong {
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.timestampCell small {
+  color: #7f8c8d;
+  font-size: 0.8rem;
+}
+
+.noStatus {
+  color: #95a5a6;
+  font-style: italic;
+}
+
+/* Status Badges */
+.statusBadge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.statusApproved {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.statusPending {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+.statusRejected {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.statusCancelled {
+  background: #e2e3e5;
+  color: #383d41;
+  border: 1px solid #d6d8db;
+}
+
+.statusDefault {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Card View */
+.activitiesList {
+  display: none;
+}
+
+.activityCard {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #3498db;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.activityCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.activityHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.activityType {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.activityTypeLabel {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.actionBadge {
+  margin-left: 8px;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.activityBody {
+  margin-bottom: 15px;
+}
+
+.activityTitle {
+  margin: 0 0 12px 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.activityMeta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.metaLabel {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.metaValue {
+  font-size: 0.9rem;
+  color: #2c3e50;
+}
+
+.activityLocation {
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* View Details Button */
+.viewDetailsBtn {
+  background: transparent;
+  color: #3498db;
+  border: 1px solid #3498db;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.viewDetailsBtn:hover {
+  background: #3498db;
+  color: white;
+}
+
+/* Refresh Button */
+.refreshBtn {
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.refreshBtn:hover {
+  background: #2980b9;
+  transform: rotate(90deg);
+}
+
+.refreshBtn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading Spinner */
+.loadingSpinner {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 3px solid #3498db;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: #7f8c8d;
+}
+
+/* Error Message */
+.errorMessage {
+  background: #fee;
+  color: #c0392b;
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.errorIcon {
+  font-size: 1.2rem;
+}
+
+/* No Activities */
+.noActivities {
+  text-align: center;
+  padding: 60px 40px;
+  color: #7f8c8d;
+  background: rgba(8, 112, 230, 0.1);
+  border-radius: 12px;
+  border: 2px dashed rgba(8, 112, 230, 0.3);
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.noActivitiesIcon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  animation: float 3s ease-in-out infinite;
+}
+
+.noActivities h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin-bottom: 12px;
+}
+
+.noActivities p {
+  font-size: 14px;
+  color: #999;
+  margin: 0 0 20px 0;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* View More */
+.viewMoreContainer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.viewMoreBtn {
+  background: transparent;
+  color: #3498db;
+  border: none;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.viewMoreBtn:hover {
+  color: #2980b9;
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tableContainer {
+    display: none;
+  }
+  
+  .activitiesList {
+    display: block;
+  }
+  
+  .filterControls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filterGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filterSelect {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .activitiesList {
+    display: none;
+  }
+} 
+
+/* Priority Notice */
+.priorityNotice {
+  background: #fff3cd;
+  color: #856404;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  border-left: 4px solid #ffc107;
+}
+
+.priorityIcon {
+  font-size: 1.2rem;
+}
+
+/* For equipment and recruitment status */
+.statusAdded {
+  background: #e6ccff;
+  color: #6f42c1;
+  border: 1px solid #d9b8ff;
+}
+
+.statusHired {
+  background: #ccf2f0;
+  color: #20c997;
+  border: 1px solid #b3ece6;
+}
+/* Admin Info Styles */
+.adminInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.adminInfoInline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.adminRoleBadge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.adminRank {
+  color: #7f8c8d;
+  font-size: 0.7rem;
+}
+
+/* Action By Cell enhancements */
+.actionByCell small {
+  font-size: 0.7rem;
+  display: block;
+  margin-top: 2px;
+}
+
+/* Priority Notice */
+.priorityNotice {
+  background: #fff3cd;
+  color: #856404;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  border-left: 4px solid #ffc107;
+}
+
+.priorityIcon {
+  font-size: 1.2rem;
+}
+
+/* For equipment and recruitment status */
+.statusAdded {
+  background: #e6ccff;
+  color: #6f42c1;
+  border: 1px solid #d9b8ff;
+}
+
+.statusHired {
+  background: #ccf2f0;
+  color: #20c997;
+  border: 1px solid #b3ece6;
+}
+
+/* Admin Info Styles */
+.adminInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.adminInfoInline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.adminRoleBadge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.adminRank {
+  color: #7f8c8d;
+  font-size: 0.7rem;
+}
+
+/* Priority Notice */
+.priorityNotice {
+  background: #fff3cd;
+  color: #856404;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  border-left: 4px solid #ffc107;
+}
+
+.priorityIcon {
+  font-size: 1.2rem;
+}
+
+/* Inventory-specific status styles */
+.statusAdded {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.statusUpdated {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.statusDeleted {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.statusHired {
+  background: #ccf2f0;
+  color: #20c997;
+  border: 1px solid #b3ece6;
+}
+
+/* Action By Cell enhancements */
+.actionByCell small {
+  font-size: 0.7rem;
+  display: block;
+  margin-top: 2px;
+}/* Add these to your PersonnelRecentActivity.module.css */
+
+.viewMoreContainer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.viewMoreBtn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.viewMoreBtn:hover {
+  background-color: #3798ff;
+  color: #2b2b2b;
+}
+
+.viewMoreBtn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Rank Image Styles */
+.actionByContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rankImageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.rankImage {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  background: white;
+}
+
+.rankImageContainerSmall {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.rankImageSmall {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background: white;
+}
+
+.personnelInfo {
+  flex: 1;
+  min-width: 0; /* For text truncation */
+}
+
+.personnelName {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.personnelRank {
+  color: #666;
+  font-size: 11px;
+  display: block;
+  margin-top: 1px;
+}
+
+.adminInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.adminRoleBadge {
+  background: #ff9500;
+  color: white;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.adminRank {
+  color: #666;
+  font-size: 10px;
+}
+
+.personnelInfoInline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Ensure table cells align properly */
+.actionByCell {
+  padding: 8px 4px;
+}
+
+/* Activity card styles */
+.activityCard .metaValue {
+  display: flex;
+  align-items: center;
+}
+/* ========== PAGINATION STYLES ========== */
+.paginationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.paginationInfo {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+.paginationButtons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.paginationBtn {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  min-width: 40px;
+}
+
+.paginationBtn:hover:not(.disabled):not(.active) {
+  background: #f0f0f0;
+  border-color: #ccc;
+}
+
+.paginationBtn.active {
+  background: #ff9500;
+  color: white;
+  border-color: #ff9500;
+  font-weight: 600;
+}
+
+.paginationBtn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f5f5f5;
+}
+
+.paginationEllipsis {
+  padding: 6px 8px;
+  color: #999;
+  font-size: 14px;
+  user-select: none;
+}
+
+.itemsPerPageSelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.itemsPerPageSelect {
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  font-size: 14px;
+}
+
+.topPagination {
+  margin-bottom: 20px;
+}
+
+.bottomPagination {
+  margin-top: 20px;
+}
+
+/* ========== EXPIRATION NOTICE STYLES ========== */
+.expiredNotice {
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff3e0;
+  border-radius: 6px;
+  color: #e65100;
+  font-size: 14px;
+}
+
+/* ========== ACTIVITY COUNT STYLES ========== */
+.activitiesCount {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+/* ========== RESPONSIVE PAGINATION ========== */
+@media (max-width: 768px) {
+  .paginationContainer {
+    padding: 10px;
+  }
+  
+  .paginationButtons {
+    gap: 4px;
+  }
+  
+  .paginationBtn {
+    padding: 4px 8px;
+    font-size: 13px;
+    min-width: 36px;
+  }
+  
+  .paginationInfo {
+    font-size: 13px;
+  }
+  
+  .itemsPerPageSelector {
+    font-size: 13px;
+  }
+  
+  .itemsPerPageSelect {
+    font-size: 13px;
+    padding: 3px 6px;
+  }
+}
+
+/* ========== UPDATE EXISTING STYLES ========== */
+.priorityNotice {
+  margin: 15px 0;
+  padding: 10px 15px;
+  background: #e3f2fd;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #1976d2;
+  border-left: 4px solid #1976d2;
+}
+
+.filterControls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}/* Personnel rank badge style */
+.personnelRankBadge {
+  background: #4CAF50;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 6px;
+  display: inline-block;
+}
+
+/* Different colors for different ranks */
+.personnelRankBadge[data-rank="FO1"] { background: #2196F3; }
+.personnelRankBadge[data-rank="FO2"] { background: #2196F3; }
+.personnelRankBadge[data-rank="FO3"] { background: #2196F3; }
+.personnelRankBadge[data-rank="SFO1"] { background: #FF9800; }
+.personnelRankBadge[data-rank="SFO2"] { background: #FF9800; }
+.personnelRankBadge[data-rank="SFO3"] { background: #FF9800; }
+.personnelRankBadge[data-rank="SFO4"] { background: #FF5722; }

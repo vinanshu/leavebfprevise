@@ -1,0 +1,76 @@
+name: BFP Monthly Leave Accrual & Annual Reset
+
+on:
+  schedule:
+    # Monthly accrual: 1st of every month at 2:00 AM Manila (6:00 PM UTC previous day)
+    - cron: '0 18 1 * *'  # 2:00 AM Manila = 6:00 PM UTC
+    # Annual reset: January 1st at 12:05 AM Manila (4:05 PM UTC Dec 31)
+    - cron: '5 16 31 12 *'  # 12:05 AM Jan 1 Manila = 4:05 PM UTC Dec 31
+  workflow_dispatch:
+
+jobs:
+  run-accrual:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: |
+          cd server
+          npm install
+      
+      - name: Create environment file
+        run: |
+          echo "SUPABASE_URL=${{ secrets.SUPABASE_URL }}" > server/.env
+          echo "SUPABASE_SERVICE_ROLE_KEY=${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}" >> server/.env
+          echo "NODE_ENV=production" >> server/.env
+      
+      - name: Check if it's January 1st
+        id: check_date
+        run: |
+          CURRENT_MONTH=$(date +%m)
+          CURRENT_DAY=$(date +%d)
+          echo "Current date: $(date)"
+          echo "Month: $CURRENT_MONTH, Day: $CURRENT_DAY"
+          
+          if [ "$CURRENT_MONTH" = "01" ] && [ "$CURRENT_DAY" = "01" ]; then
+            echo "IS_NEW_YEAR=true" >> $GITHUB_OUTPUT
+            echo "🎉 It's January 1st - Running annual reset"
+          else
+            echo "IS_NEW_YEAR=false" >> $GITHUB_OUTPUT
+            echo "📅 Running regular monthly accrual"
+          fi
+      
+      - name: Run Annual Emergency Reset (January 1st only)
+        if: steps.check_date.outputs.IS_NEW_YEAR == 'true'
+        run: |
+          cd server
+          echo "🔄 RUNNING ANNUAL EMERGENCY LEAVE RESET"
+          echo "Date: $(date)"
+          node ./cron/annual-reset.js
+      
+      - name: Run Monthly Accrual (All months including January)
+        run: |
+          cd server
+          echo "🚀 RUNNING MONTHLY LEAVE ACCRUAL"
+          echo "Date: $(date)"
+          node ./cron/monthly-accrual.js
+      
+      - name: Cleanup
+        run: rm -f server/.env
+      
+      - name: Success notification
+        if: success()
+        run: |
+          if [ "${{ steps.check_date.outputs.IS_NEW_YEAR }}" = "true" ]; then
+            echo "✅ BFP Annual emergency reset completed successfully!"
+          else
+            echo "✅ BFP Monthly leave accrual completed successfully!"
+          fi

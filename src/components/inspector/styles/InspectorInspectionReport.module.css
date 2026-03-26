@@ -1,0 +1,3150 @@
+/* InspectorInspectionReport.module.css - Matching InspectorInventoryControl */
+
+
+/* Add to your InspectorInspectionReport.module.css */
+
+.equipmentActions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.returnBtn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.returnBtn:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-1px);
+}
+
+.settledBadge {
+  background: #dcfce7;
+  color: #166534;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Update the modal table to accommodate the new column */
+.IIRModalTable th:nth-child(7),
+.IIRModalTable td:nth-child(7) {
+  width: 120px;
+  text-align: center;
+}
+
+
+
+/* Top Controls - Matching InspectorInventoryControl */
+.IIRTopControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.IIRTableHeader {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 15px 0;
+}
+
+.IIRFilterCategory,
+.IIRFilterStatus,
+.IIRSearchBar {
+  padding: 8px 12px;
+  margin-left: 5px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.IIRFilterCategory:hover,
+.IIRFilterStatus:hover,
+.IIRSearchBar:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.IIRFilterCategory:focus,
+.IIRFilterStatus:focus,
+.IIRSearchBar:focus {
+  border-color: #9ca3af;
+  box-shadow: 0 0 0 3px rgba(62, 118, 230, 0.3);
+}
+
+.IIRSearchBar {
+  width: 250px;
+}
+
+.IIRFilterCategory,
+.IIRFilterStatus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24'><path fill='%23848484' d='M7 10l5 5 5-5H7z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  padding-right: 32px;
+}
+
+/* Summary Cards - Matching InspectorInventoryControl */
+.IIRSummary {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+.IIRSummaryCard {
+  flex: 1;
+  min-width: 150px;
+  padding: 30px;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 5px 4px rgba(16, 95, 175, 0.597);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.IIRSummaryCard h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.IIRSummaryCard p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.IIRSummaryCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 4px rgba(16, 95, 175, 0.597);
+}
+
+.IIRTotal {
+  background: linear-gradient(135deg, #b91c1c, #ef4444);
+}
+
+.IIRUnsettled {
+  background: linear-gradient(135deg, #dc3545, #e83e8c);
+}
+
+.IIRSettled {
+  background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.IIRValue {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+}
+
+.IIRActive {
+  border: 3px solid #ffffff00!important;
+  transform: scale(1.0) !important;
+}
+
+/* Table Header Section */
+.IIRTableHeaderSection {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.IIRSHeaders {
+  margin: 1px 0;
+  padding-left: 10px;
+  border-left: 4px solid #dc2626;
+  color: black;
+}
+
+/* Pagination - Matching InspectorInventoryControl */
+.IIRPaginationContainer {
+  display: flex;
+  position: relative;
+  align-items: center;
+  top:25px;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+  padding-right: 0px;
+}
+
+.IIRPaginationContainer.IIRTopPagination {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  gap: 10px;
+  color: var(--text-primary);
+  overflow-x: hidden;
+  height: 100px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.IIRPaginationContainer.IIRBottomPagination {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  top: -10px;
+  gap: 10px;
+}
+
+.IIRPaginationBtn {
+  background: #b91c1c;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.IIRPaginationBtn:hover:not(:disabled) {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.IIRPaginationBtn:disabled,
+.IIRPaginationBtn.IIRDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.IIRPaginationBtn.IIRActive {
+  background: #9ca3af;
+  color: #fff;
+  pointer-events: none;
+  transform: scale(1.15);
+}
+
+.IIRPaginationEllipsis {
+  padding: 6px 8px;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Table Container - Matching InspectorInventoryControl */
+.IIRTableScrollContainer {
+  width: 101%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  box-shadow: 0 5px 4px rgba(16, 95, 175, 0.597);
+  background: #fff;
+  position: relative;
+  margin-left: -3px;
+  margin-bottom: 20px;
+}
+
+.IIRTableScrollContainer::-webkit-scrollbar {
+  height: 10px;
+}
+
+.IIRTableScrollContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0 0 10px 10px;
+}
+
+.IIRTableScrollContainer::-webkit-scrollbar-thumb {
+  background: #ef4444;
+  border-radius: 10px;
+}
+
+.IIRTableScrollContainer::-webkit-scrollbar-thumb:hover {
+  background: #b91c1c;
+}
+
+/* Table Styling - Matching InspectorInventoryControl */
+.IIRTable {
+  width: auto;
+  min-width: 2000px; /* Adjust based on your column count */
+  padding: 20px;
+  border-collapse:separate;
+  border-spacing: 0;
+  font-size: 14px;
+  margin-left: 0;
+  background: #fff;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: none;
+}
+
+.IIRTable thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.IIRTable th {
+  padding: 14px 16px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: rgb(0, 0, 0);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #ef4444;
+  border-bottom: 3px solid #ddd;
+}
+
+.IIRTable tbody td {
+  padding: 14px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.595);
+  color: #333;
+  transition: background 0.25s ease;
+}
+
+/* Alternate row colors */
+.IIRTable tbody tr:nth-child(odd) td {
+  background: #ffffff;
+}
+
+.IIRTable tbody tr:nth-child(even) td {
+  background: #81878c;
+}
+
+/* Row hover effects */
+.IIRTable tbody tr {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.IIRTable tbody tr:hover {
+  background: #d1d5db;
+  color: #fff;
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 4px 8px rgba(33, 17, 17, 0.914), 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+  position: relative;
+}
+
+.IIRTable tbody tr:hover td {
+  background: #d1d5db !important;
+  color: white;
+}
+
+/* Column width specifications */
+.IIRTable th:nth-child(1),
+.IIRTable td:nth-child(1) {
+  width: 120px; /* Rank */
+  min-width: 120px;
+}
+
+.IIRTable th:nth-child(2),
+.IIRTable td:nth-child(2) {
+  width: 100px; /* Personnel Name */
+  min-width: 200px;
+}
+
+.IIRTable th:nth-child(3),
+.IIRTable td:nth-child(3) {
+  width: 150px; /* Clearance Type */
+  min-width: 150px;
+}
+
+.IIRTable th:nth-child(4),
+.IIRTable td:nth-child(4) {
+  width: 140px; /* Request Date */
+  min-width: 140px;
+}
+
+.IIRTable th:nth-child(5),
+.IIRTable td:nth-child(5) {
+  width: 130px; /* Status */
+  min-width: 130px;
+}
+
+.IIRTable th:nth-child(6),
+.IIRTable td:nth-child(6) {
+  width: 180px; /* Missing Equipment */
+  min-width: 180px;
+}
+
+.IIRTable th:nth-child(7),
+.IIRTable td:nth-child(7) {
+  width: 150px; /* Total Value */
+  min-width: 150px;
+}
+
+.IIRTable th:nth-child(8),
+.IIRTable td:nth-child(8) {
+  width: 200px; /* Findings */
+  min-width: 200px;
+}
+
+.IIRTable th:nth-child(9),
+.IIRTable td:nth-child(9) {
+  width: 200px; /* Actions */
+  min-width: 200px;
+}
+
+/* Status Badges - Matching InspectorInventoryControl */
+.IIRStatusBadge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.IIRStatusUnsettled {
+  background-color: #dc3545;
+  color: white;
+  border: 1px solid #dc3545;
+}
+
+.IIRStatusSettled {
+  background-color: #28a745;
+  color: white;
+  border: 1px solid #28a745;
+}
+
+.IIRStatusPending {
+  background-color: #ffc107;
+  color: #212529;
+  border: 1px solid #ffc107;
+}
+
+.IIRStatusInProgress {
+  background-color: #17a2b8;
+  color: white;
+  border: 1px solid #17a2b8;
+}
+
+.IIRStatusCompleted {
+  background-color: #28a745;
+  color: white;
+  border: 1px solid #28a745;
+}
+
+.IIRStatusRejected {
+  background-color: #dc3545;
+  color: white;
+  border: 1px solid #dc3545;
+}
+
+.IIRStatusMissing {
+  background-color: #dc3545;
+  color: white;
+  border: 1px solid #dc3545;
+}
+
+.IIRStatusDamaged {
+  background-color: #ffc107;
+  color: #212529;
+  border: 1px solid #ffc107;
+}
+
+.IIRStatusDefault {
+  background-color: #6c757d;
+  color: white;
+  border: 1px solid #6c757d;
+}
+
+/* Badge Number */
+.IIRBadgeNumber {
+  font-size: 0.85rem;
+  color: #ffdd00;
+  margin-top: 2px;
+}
+
+.IIRTable tbody tr:hover .IIRBadgeNumber {
+  color: white;
+}
+
+/* Missing Section */
+.IIRMissingSection {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.IIRMissingCount {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.IIRNoMissing {
+  color: #28a745;
+  font-weight: 500;
+}
+
+/* Price Display */
+.IIRTotalPrice {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.IIRNoPrice {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.IIRTable tbody tr:hover .IIRTotalPrice,
+.IIRTable tbody tr:hover .IIRNoPrice {
+  color: white;
+}
+
+/* Findings Preview */
+.IIRFindingsPreview {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #666;
+  margin: 0 auto;
+}
+
+.IIRTable tbody tr:hover .IIRFindingsPreview {
+  color: white;
+}
+
+/* Action Buttons */
+.IIRActionButtons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.IIRBtn {
+  padding: 8px 16px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-transform: none;
+}
+
+.IIRBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.IIRViewDetailsBtn {
+  background-color: #ef4444;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.IIRViewDetailsBtn:hover {
+  background-color: #991b1b;
+  transform: translateY(-2px);
+}
+
+.IIRShowMissingBtn {
+  background-color: #17a2b8;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.IIRShowMissingBtn:hover {
+  background-color: #138496;
+}
+
+.IIRApproveBtn {
+  background-color: #28a745;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.IIRApproveBtn:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.IIRCloseBtn {
+  background-color: #6c757d;
+}
+
+.IIRCloseBtn:hover {
+  background-color: #5a6268;
+}
+
+/* Table Footer */
+.IIRTableFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #dee2e6;
+  margin-top: 10px;
+}
+
+.IIRResultsInfo {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.IIRTotalMissing {
+  font-size: 16px;
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* View Modal - Matching InspectorInventoryControl */
+.IIRViewModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  display: flex;
+}
+
+.IIRViewModalContent {
+  background-color: white;
+  border-radius: 8px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.IIRViewModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+}
+
+.IIRViewModalTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.IIRViewModalCloseBtn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.IIRViewModalCloseBtn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #333;
+}
+
+.IIRViewModalBody {
+  padding: 20px;
+}
+
+.IIRViewModalSection {
+  margin-bottom: 25px;
+}
+
+.IIRViewModalSection:last-child {
+  margin-bottom: 0;
+}
+
+.IIRViewModalSectionTitle {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #4b5563;
+  padding-bottom: 8px;
+}
+
+.IIRViewModalGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.IIRViewModalField {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.IIRViewModalField label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.IIRViewModalField span {
+  color: #333;
+  font-size: 15px;
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+}
+
+.IIRViewModalFullWidth {
+  width: 100%;
+}
+
+.IIRViewModalTextContent {
+  color: #333;
+  font-size: 15px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  min-height: 60px;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.IIRViewModalActions {
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background-color: #f8f9fa;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Modal Table */
+.IIRModalTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.IIRModalTable th,
+.IIRModalTable td {
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.IIRModalTable th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.IIRModalTable tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Loading Container */
+.IIRLoadingContainer {
+  text-align: center;
+  padding: 60px;
+  color: #6c757d;
+}
+
+.IIRLoadingContainer h2 {
+  margin-bottom: 10px;
+  color: #495057;
+}
+
+/* Animated Emoji */
+.IIRAnimatedEmoji {
+  display: inline-block;
+  animation: bounceUpDown 2s ease-in-out infinite;
+}
+
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .IIRSummary {
+    flex-direction: column;
+    margin: 10px;
+  }
+  
+  .IIRSummaryCard {
+    min-width: 100%;
+  }
+  
+  .IIRTableHeader {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  
+  .IIRFilterCategory,
+  .IIRFilterStatus,
+  .IIRSearchBar {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .IIRTableScrollContainer {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .IIRViewModalContent {
+    max-width: 95%;
+
+    
+    margin: 10px;
+  }
+  
+  .IIRViewModalGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .IIRViewModalTitle {
+    font-size: 1.2rem;
+  }
+  
+  .IIRPaginationContainer {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .IIRPaginationBtn {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .IIRActionButtons {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .IIRBtn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .IIRTableFooter {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* Add to InspectorInspectionReport.module.css */
+.combinedAccountabilityBadge {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.sourceBreakdown {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.routineBadge {
+  background: #3b82f6;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+.clearanceBadge {
+  background: #8b5cf6;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+.totalAmountHighlight {
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Add these to your existing CSS file */
+
+/* Combined Accountability Indicators */
+.combinedAccountabilityBadge {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 4px;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.sourceBreakdown {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.routineBadge {
+  background: #3b82f6;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+.clearanceBadge {
+  background: #8b5cf6;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+.equipmentSourceSummary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+.routineDot, .clearanceDot {
+  font-size: 12px;
+}
+
+.sourceCount {
+  color: #666;
+  font-size: 10px;
+}
+
+.amountBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.amountDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 10px;
+}
+
+.routineAmount, .clearanceAmount {
+  color: #666;
+}
+
+.routineAmount::before {
+  content: "• ";
+  color: #3b82f6;
+}
+
+.clearanceAmount::before {
+  content: "• ";
+  color: #8b5cf6;
+}
+
+.combinedInfoHeader {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.routineIndicator::before,
+.clearanceIndicator::before,
+.combinedIndicator::before {
+  margin-right: 4px;
+}
+
+.routineIndicator::before {
+  content: "🔵";
+}
+
+.clearanceIndicator::before {
+  content: "🟣";
+}
+
+.combinedIndicator::before {
+  content: "⚡";
+}
+
+/* Modal Styles for Combined Accountability */
+.combinedModalBadge {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.routineSectionHeader,
+.clearanceSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.routineSectionHeader::before {
+  content: "🔵";
+}
+
+.clearanceSectionHeader::before {
+  content: "🟣";
+}
+
+.sourceTotal {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.sourceTotalAmount {
+  font-weight: bold;
+  color: #dc3545;
+}
+
+.routineValue {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.clearanceValue {
+  color: #8b5cf6;
+  font-weight: 600;
+}
+
+.combinedType {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.combinedCount {
+  color: #f59e0b;
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+.clearanceTypesDisplay {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.multipleTypesBadge {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+/* Clearance Types Display Styles */
+.clearanceTypesDisplay {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.multipleTypesBadge {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+
+.clearanceTypesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.clearanceTypeTag {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  border: 1px solid #dee2e6;
+  white-space: nowrap;
+}/* Rank Cell Styles */
+.rankCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+}
+
+.rankImage {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+.rankTextWithImage {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.rankText {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Personnel Info Cell Styles */
+.personnelInfoCell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.personnelNameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.personnelFullName {
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.rankBadge {
+  background-color: #4b5563;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Personnel details in modals */
+.personnelDetails {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.personnelDetailsImage {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #e9ecef;
+}
+
+.personnelDetailsInfo {
+  flex: 1;
+}
+
+.personnelDetailsName {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+
+.personnelDetailsRank {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.modalRankImage {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+
+/* Add to your CSS module file */
+
+/* Approve Modal Styles */
+.approveModalIcon {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.combinedModalIcon {
+  font-size: 56px;
+  animation: pulse 1.5s infinite;
+}
+
+.approveModalMessage {
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.modal-breakdown {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  text-align: left;
+  border-left: 4px solid #ef4444;
+}
+
+.modal-breakdown div {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-total {
+  background: #e8f5e9;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  text-align: left;
+  border-left: 4px solid #28a745;
+  font-weight: bold;
+}
+
+.approveModalBreakdown {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+  border: 1px solid #e9ecef;
+}
+
+.breakdownItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px dashed #dee2e6;
+}
+
+.breakdownItem:last-child {
+  border-bottom: none;
+}
+
+.breakdownTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  margin-top: 10px;
+  border-top: 2px solid #dee2e6;
+  font-size: 1.1em;
+}
+
+.routineDot {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.clearanceDot {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.combinedDot {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.approveModalWarning {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 20px;
+  text-align: center;
+  color: #856404;
+  font-size: 0.9em;
+}
+
+/* Button Styles for Approve Modal */
+.IIRCancelBtn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.IIRCancelBtn:hover {
+  background: #5a6268;
+}
+
+.IIRConfirmBtn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.IIRConfirmBtn:hover {
+  background: #218838;
+}
+
+/* Animation for Combined Icon */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Close button styling */
+.IIRCloseBtn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(108, 117, 125, 0.2);
+}
+
+.IIRCloseBtn:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+.IIRCloseBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(108, 117, 125, 0.2);
+}
+
+
+/* Return All button styling */
+.returnAllBtn {
+  background: linear-gradient(135deg, #17a2b8, #138496);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(23, 162, 184, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.returnAllBtn:hover {
+  background: linear-gradient(135deg, #138496, #117a8b);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(23, 162, 184, 0.3);
+}
+
+.returnAllBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(23, 162, 184, 0.2);
+}
+
+/* Add a hover effect that shows a tooltip */
+.returnAllBtn:after {
+  content: 'Return all equipment items';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.returnAllBtn:hover:after {
+  opacity: 1;
+}
+
+/* For the Approve button in the modal actions */
+.IIRApproveBtn {
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.2);
+}
+
+.IIRApproveBtn:hover {
+  background: linear-gradient(135deg, #218838, #1e7e34);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.IIRApproveBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(40, 167, 69, 0.2);
+}
+
+/* Individual Return button styling (for single equipment items) */
+.returnBtn {
+  background: linear-gradient(135deg, #20c997, #1ba87e);
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 1px 3px rgba(32, 201, 151, 0.2);
+}
+
+.returnBtn:hover {
+  background: linear-gradient(135deg, #1ba87e, #18966f);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(32, 201, 151, 0.3);
+}
+
+.returnBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(32, 201, 151, 0.2);
+}
+
+
+/* Modal Actions Container - Improved spacing and alignment */
+.IIRViewModalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+  margin-top: 20px;
+}
+
+/* Make the Return All button stand out more when it's the primary action */
+.returnAllBtn.primary {
+  background: linear-gradient(135deg, #fd7e14, #e8590c);
+  box-shadow: 0 2px 4px rgba(253, 126, 20, 0.2);
+}
+
+.returnAllBtn.primary:hover {
+  background: linear-gradient(135deg, #e8590c, #d9480f);
+  box-shadow: 0 4px 8px rgba(253, 126, 20, 0.3);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .IIRViewModalActions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .IIRCloseBtn,
+  .returnAllBtn,
+  .IIRApproveBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Add a subtle glow effect for important actions */
+.returnAllBtn.important {
+  animation: subtleGlow 2s infinite ease-in-out;
+}
+
+@keyframes subtleGlow {
+  0%, 100% {
+    box-shadow: 0 2px 4px rgba(23, 162, 184, 0.2);
+  }
+  50% {
+    box-shadow: 0 2px 8px rgba(23, 162, 184, 0.4);
+  }
+}
+
+
+
+/* Page Header with Tabs */
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Tab Navigation */
+.tabNavigation {
+  display: flex;
+  gap: 10px;
+  background: #f8f9fa;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.tabBtn {
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #495057;
+}
+
+.tabBtn:hover {
+  background: #e9ecef;
+  transform: translateY(-1px);
+}
+
+.activeTab {
+  background: #ef4444;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+.activeTab:hover {
+  background: #991b1b;
+  transform: translateY(-1px);
+}
+
+/* Archived Summary Card */
+.IIRSummaryCard.IIRArchived {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  border: 1px solid #495057;
+  color: white;
+  cursor: pointer;
+}
+
+.IIRSummaryCard.IIRArchived:hover {
+  background: linear-gradient(135deg, #495057 0%, #343a40 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+.IIRSummaryCard.IIRArchived h3 {
+  color: white;
+}
+
+.IIRSummaryCard.IIRArchived p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Archived Modal Styles */
+.archivedCount {
+  background: #6c757d;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+/* Archived Table Container */
+.archivedTableContainer {
+  overflow-x: auto;
+  max-height: 60vh;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  background: white;
+  
+}
+
+.archivedTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 1000px;
+}
+
+.archivedTable th {
+  background: #f8f9fa;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  color: #495057;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.archivedTable td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: top;
+  color: #212529;
+}
+
+.archivedTable tr:hover {
+  background-color: #f8f9fa;
+}
+
+.archivedTable tr:nth-child(even) {
+  background-color: #fcfcfc;
+}
+
+.archivedTable tr:nth-child(even):hover {
+  background-color: #f8f9fa;
+}
+
+/* Archived Personnel Info */
+.archivedPersonnel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.archivedPersonnel strong {
+  font-weight: 600;
+  color: #212529;
+}
+
+.archivedDetails {
+  font-size: 12px;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Archived Status Badge */
+.archivedStatus {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #28a745;
+  color: white;
+}
+
+/* Archived Item Count */
+.archivedItemCount {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lostCount, .damagedCount {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.lostCount {
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe3e3 100%);
+  color: #dc3545;
+  border: 1px solid #ffc9c9;
+}
+
+.damagedCount {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  color: #856404;
+  border: 1px solid #ffd8a8;
+}
+
+/* Archived Amount Display */
+.archivedAmount {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.archivedAmount strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: #212529;
+}
+
+.paidAmount {
+  font-size: 12px;
+  color: #28a745;
+  font-weight: 600;
+  background: #f8fff9;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #c3e6cb;
+  width: fit-content;
+}
+
+/* Settlement Method */
+.settlementMethod {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #e9ecef;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #495057;
+}
+
+/* Settled By Info */
+.settledBy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.settleDate {
+  font-size: 11px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* View Archived Button */
+.viewArchivedBtn {
+  padding: 8px 16px;
+  background: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  min-width: 80px;
+  text-align: center;
+}
+
+.viewArchivedBtn:hover {
+  background: #138496;
+  transform: translateY(-1px);
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: 80px 20px;
+  color: #6c757d;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.emptyIcon {
+  font-size: 64px;
+  margin-bottom: 24px;
+  opacity: 0.3;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.emptyState h4 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #495057;
+  font-weight: 600;
+}
+
+.emptyState p {
+  font-size: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Loading State */
+.loadingMessage {
+  text-align: center;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #495057;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #ef4444;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Export Button */
+.exportBtn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+}
+
+.exportBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #218838 0%, #17a2b8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.exportBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Modal Body Scroll */
+.IIRViewModalBody {
+  max-height: calc(80vh - 140px);
+  overflow-y: auto;
+  padding-right: 4px;
+
+}
+
+.IIRViewModalBody::-webkit-scrollbar {
+  width: 6px;
+}
+
+.IIRViewModalBody::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.IIRViewModalBody::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.IIRViewModalBody::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .archivedTable {
+    font-size: 13px;
+  }
+  
+  .archivedTable th,
+  .archivedTable td {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabNavigation {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .tabBtn {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .archivedTable th,
+  .archivedTable td {
+    padding: 10px;
+    font-size: 12px;
+  }
+  
+  .IIRViewModalContent {
+    margin: 10px;
+  }
+}
+
+/* Print Styles for Archive */
+@media print {
+  .archivedTableContainer {
+    max-height: none;
+    overflow: visible;
+  }
+  
+  .archivedTable {
+    border: 1px solid #000;
+  }
+  
+  .archivedTable th {
+    background: #ddd !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .archivedTable tr {
+    page-break-inside: avoid;
+  }
+}
+
+/* Animation for Archive Modal */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.IIRViewModalContent {
+  animation: slideIn 0.3s ease-out;
+  width: 900px;
+  margin-left: 200px;
+}
+
+/* Archive Filter Toggle */
+.archiveFilterToggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.archiveFilterToggle label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+}
+
+.archiveFilterToggle select {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  color: #495057;
+  min-width: 150px;
+}
+
+/* Archive Search */
+.archiveSearch {
+  margin: 20px 0;
+  position: relative;
+}
+
+.archiveSearch input {
+  width: 100%;
+  padding: 12px 16px 12px 40px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236c757d' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E") no-repeat 16px center;
+  background-size: 16px;
+}
+
+.archiveSearch input:focus {
+  outline: none;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Archive Stats */
+.archiveStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+}
+
+.archiveStatCard {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid #dee2e6;
+}
+
+.archiveStatCard h4 {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.archiveStatCard .statValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ef4444;
+  margin-bottom: 4px;
+}
+
+.archiveStatCard .statLabel {
+  font-size: 12px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+
+
+/* Add these styles to your CSS module */
+
+.clearanceTypeCell {
+  position: relative;
+  min-width: 150px;
+}
+
+.clearanceTypeMain {
+  font-weight: 600;
+}
+
+.multipleTypesIndicator {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 6px;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.clearanceTypesTooltip {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  min-width: 200px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.clearanceTypeCell:hover .clearanceTypesTooltip {
+  display: block;
+}
+
+.clearanceTypeItem {
+  padding: 4px 8px;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+}
+
+.clearanceTypeItem:last-child {
+  border-bottom: none;
+}
+
+.clearanceStatus {
+  font-size: 11px;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Add to your CSS module */
+.multipleRequestsBadge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 6px;
+  background-color: #fff3e0;
+  color: #ef6c00;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.multipleClearanceTooltip {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  min-width: 250px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-top: 5px;
+}
+
+.clearanceTypesDisplay:hover .multipleClearanceTooltip {
+  display: block;
+}
+
+.tooltipTitle {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+
+.tooltipItem {
+  padding: 4px 0;
+  font-size: 12px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.tooltipItem:last-child {
+  border-bottom: none;
+}
+
+/* Multiple clearance indicators */
+.multipleTypesBadge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 6px;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.multipleRequestsBadge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  background-color: #fff3e0;
+  color: #ef6c00;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.multipleRequestsIndicator {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 6px;
+  background-color: #fce4ec;
+  color: #c2185b;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Tooltip for multiple clearances */
+.multipleClearanceTooltip {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  min-width: 250px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-top: 5px;
+}
+
+.clearanceTypesDisplay {
+  position: relative;
+}
+
+.clearanceTypesDisplay:hover .multipleClearanceTooltip {
+  display: block;
+}
+
+.tooltipTitle {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+
+.tooltipItem {
+  padding: 4px 0;
+  font-size: 12px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.tooltipItem:last-child {
+  border-bottom: none;
+}
+
+/* Approve modal multiple clearance details */
+.multipleClearanceDetails {
+  margin: 15px 0;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #1976d2;
+}
+
+.detailsTitle {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1976d2;
+  font-size: 14px;
+}
+
+.clearanceDetailItem {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.clearanceDetailItem:last-child {
+  border-bottom: none;
+}
+
+.clearanceNumber {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #1976d2;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.clearanceTypeName {
+  flex: 1;
+  font-weight: 500;
+}
+
+.clearanceId {
+  font-size: 11px;
+  color: #666;
+  font-family: monospace;
+}
+
+/* Modal specific styles */
+.IIRViewModalBody .clearanceTypesDisplay {
+  margin-top: 5px;
+}
+
+.clearanceTypesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.clearanceTypeTag {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* ================================
+    RESPONSIVE STYLES FOR 768PX AND BELOW
+  ================================ */
+
+@media (max-width: 768px) {
+  /* General adjustments */
+  .main-content {
+    padding: 10px;
+    margin-left: 0;
+  }
+
+  /* Page header with tabs */
+  .pageHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .pageHeader h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .tabNavigation {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .tabBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+  }
+
+  /* Top controls */
+  .IIRTopControls {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .IIRTableHeader {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .IIRFilterCategory,
+  .IIRSearchBar {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .IIRSearchBar {
+    width: 100%;
+  }
+
+  /* Summary cards - stack vertically */
+  .IIRSummary {
+    flex-direction: column;
+    margin: 15px 0;
+    gap: 15px;
+  }
+
+  .IIRSummaryCard {
+    min-width: 100%;
+    padding: 20px;
+  }
+
+  .IIRSummaryCard h3 {
+    font-size: 14px;
+  }
+
+  .IIRSummaryCard p {
+    font-size: 20px;
+  }
+
+  /* Table header section */
+  .IIRTableHeaderSection {
+    margin: 20px 0 10px 0;
+  }
+
+  .IIRSHeaders {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .combinedInfoHeader {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* Table container */
+  .IIRTableScrollContainer {
+    width: 100%;
+    margin-left: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .IIRTable {
+    min-width: 1800px; /* Allow horizontal scrolling */
+    font-size: 13px;
+  }
+
+  .IIRTable th,
+  .IIRTable td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .IIRTable th {
+    font-size: 12px;
+    padding: 10px 8px;
+  }
+
+  /* Column width adjustments for mobile */
+  .IIRTable th:nth-child(1),
+  .IIRTable td:nth-child(1) {
+    width: 80px; /* Rank */
+    min-width: 80px;
+  }
+
+  .IIRTable th:nth-child(2),
+  .IIRTable td:nth-child(2) {
+    width: 150px; /* Personnel Name */
+    min-width: 150px;
+  }
+
+  .IIRTable th:nth-child(3),
+  .IIRTable td:nth-child(3) {
+    width: 130px; /* Clearance Type */
+    min-width: 130px;
+  }
+
+  .IIRTable th:nth-child(4),
+  .IIRTable td:nth-child(4) {
+    width: 100px; /* Request Date */
+    min-width: 100px;
+  }
+
+  .IIRTable th:nth-child(5),
+  .IIRTable td:nth-child(5) {
+    width: 100px; /* Status */
+    min-width: 100px;
+  }
+
+  .IIRTable th:nth-child(6),
+  .IIRTable td:nth-child(6) {
+    width: 120px; /* Missing Equipment */
+    min-width: 120px;
+  }
+
+  .IIRTable th:nth-child(7),
+  .IIRTable td:nth-child(7) {
+    width: 100px; /* Total Value */
+    min-width: 100px;
+  }
+
+  .IIRTable th:nth-child(8),
+  .IIRTable td:nth-child(8) {
+    width: 120px; /* Findings */
+    min-width: 120px;
+  }
+
+  .IIRTable th:nth-child(9),
+  .IIRTable td:nth-child(9) {
+    width: 150px; /* Actions */
+    min-width: 150px;
+  }
+
+  /* Cell content adjustments */
+  .rankCell {
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .personnelInfoCell {
+    align-items: center;
+    text-align: center;
+  }
+
+  .personnelNameRow {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .personnelFullName {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .clearanceTypesDisplay {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Status badges */
+  .IIRStatusBadge {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .settlementDate {
+    font-size: 10px;
+  }
+
+  /* Action buttons */
+  .IIRActionButtons {
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .IIRBtn {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .IIRViewDetailsBtn,
+  .IIRApproveBtn {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  /* Pagination */
+  .IIRPaginationContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin: 10px 0;
+  }
+
+  .IIRPaginationBtn {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 2px;
+  }
+
+  .IIRPaginationEllipsis {
+    padding: 6px 4px;
+  }
+
+  /* Table footer */
+  .IIRTableFooter {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 15px 10px;
+  }
+
+  .IIRResultsInfo {
+    font-size: 12px;
+  }
+
+  .IIRTotalMissing {
+    font-size: 14px;
+  }
+
+  /* Modals */
+  .IIRViewModalOverlay {
+    padding: 10px;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .IIRViewModalContent {
+    max-width: 95%;
+    max-height: 85vh;
+    margin: 10px auto;
+  }
+
+  .IIRViewModalHeader {
+    padding: 15px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .IIRViewModalTitle {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .IIRViewModalCloseBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+  }
+
+  /* Modal body adjustments */
+  .IIRViewModalBody {
+    padding: 15px;
+    max-height: calc(80vh - 100px);
+  }
+
+  .IIRViewModalGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .IIRViewModalSection {
+    margin-bottom: 20px;
+  }
+
+  .IIRViewModalSectionTitle {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* Modal tables */
+  .IIRModalTable {
+    font-size: 12px;
+    min-width: 800px; /* Allow horizontal scroll within modal */
+  }
+
+  .IIRModalTable th,
+  .IIRModalTable td {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  /* Modal actions */
+  .IIRViewModalActions {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .IIRViewModalActions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Approve modal specific */
+  .approveModalMessage {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .approveModalBreakdown {
+    padding: 10px;
+  }
+
+  .breakdownItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 8px 0;
+  }
+
+  .breakdownTotal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 10px 0;
+  }
+
+  /* Loading state */
+  .IIRLoadingContainer {
+    padding: 30px 20px;
+  }
+
+  .IIRLoadingContainer h2 {
+    font-size: 1.2rem;
+  }
+
+  /* Animated emoji */
+  .IIRAnimatedEmoji {
+    font-size: 36px;
+  }
+
+  /* Scrollbar adjustments for mobile */
+  .IIRTableScrollContainer::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  /* Combined accountability indicators */
+  .combinedAccountabilityBadge {
+    font-size: 10px;
+    padding: 2px 6px;
+    text-align: center;
+  }
+
+  .sourceBreakdown {
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .equipmentSourceSummary {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .sourceCount {
+    font-size: 9px;
+  }
+
+  /* Multiple clearance indicators */
+  .multipleTypesBadge,
+  .multipleRequestsBadge {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+
+  /* Tooltips */
+  .multipleClearanceTooltip {
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 300px;
+    z-index: 10000;
+  }
+
+  /* Equipment actions in modal */
+  .equipmentActions {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .returnBtn {
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 11px;
+    justify-content: center;
+  }
+
+  .settledBadge {
+    font-size: 11px;
+    padding: 4px 8px;
+    text-align: center;
+  }
+
+  /* Return all button */
+  .returnAllBtn:after {
+    display: none; /* Hide tooltip on mobile */
+  }
+}
+
+/* Additional responsive adjustments for very small screens */
+@media (max-width: 480px) {
+  /* Further reduce font sizes */
+  .IIRTable {
+    font-size: 12px;
+    min-width: 1500px;
+  }
+
+  .IIRTable th,
+  .IIRTable td {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+
+  .IIRTable th {
+    font-size: 11px;
+  }
+
+  /* Hide less important information */
+  .IIRBadgeNumber {
+    font-size: 11px;
+  }
+
+  /* Reduce modal padding */
+  .IIRViewModalContent {
+    padding: 10px;
+  }
+
+  .IIRViewModalBody {
+    padding: 10px;
+  }
+
+  /* Simplify section titles */
+  .IIRViewModalSectionTitle {
+    font-size: 0.9rem;
+  }
+
+  /* Stack amount breakdown */
+  .amountDetails {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  /* Hide some optional elements */
+  .settlementDate {
+    display: none;
+  }
+
+  /* Adjust approve modal */
+  .approveModalMessage {
+    font-size: 13px;
+  }
+
+  /* Reduce button sizes */
+  .IIRBtn,
+  .IIRViewDetailsBtn,
+  .IIRApproveBtn,
+  .IIRCloseBtn,
+  .returnAllBtn {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+}
+
+/* Tablets (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .IIRTableScrollContainer {
+    width: 100%;
+  }
+
+  .IIRTable {
+    min-width: 1600px;
+  }
+
+  .IIRSummary {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .IIRSummaryCard {
+    min-width: calc(50% - 10px);
+  }
+
+  .IIRViewModalContent {
+    max-width: 90%;
+  }
+}
+
+/* Ensure touch-friendly interactions */
+@media (max-width: 768px) {
+  button,
+  select,
+  input {
+    min-height: 44px; /* Minimum touch target size */
+  }
+
+  /* Prevent zoom on input focus for iOS */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  /* Better scrolling on mobile */
+  .IIRTableScrollContainer {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Adjust modal overlays */
+  .IIRViewModalOverlay {
+    align-items: flex-start;
+    padding-top: 20px;
+    overflow-y: auto;
+  }
+
+  /* Ensure long text wraps */
+  .personnelFullName,
+  .clearanceTypeTag,
+  .multipleTypesBadge {
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  /* Make filter dropdowns easier to tap */
+  .IIRFilterCategory {
+    padding: 12px;
+    background-size: 10px;
+    background-position: right 10px center;
+  }
+
+  /* Adjust tab navigation */
+  .tabBtn {
+    min-height: 48px;
+  }
+}
+
+/* Fix for iOS Safari specific issues */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 768px) {
+    .IIRTableScrollContainer {
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .IIRViewModalOverlay {
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Prevent elastic scrolling in modals */
+    .IIRViewModalContent {
+      overscroll-behavior: contain;
+    }
+  }
+}
+
+/* Loading state adjustments */
+@media (max-width: 768px) {
+  .IIRLoadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+  }
+
+  .IIRLoadingContainer h2 {
+    font-size: 1.2rem;
+  }
+
+  .IIRLoadingContainer p {
+    font-size: 14px;
+  }
+}
+
+/* Empty state adjustments */
+@media (max-width: 768px) {
+  .IIRTable tbody td[colspan] {
+    padding: 30px 15px;
+  }
+
+  .IIRAnimatedEmoji {
+    display: block;
+    margin: 0 auto 15px;
+  }
+
+  .IIRTable tbody td[colspan] h3 {
+    font-size: 16px;
+  }
+
+  .IIRTable tbody td[colspan] p {
+    font-size: 14px;
+  }
+}
+
+/* Optimize tooltips for touch devices */
+@media (max-width: 768px) {
+  .clearanceTypesDisplay:hover .multipleClearanceTooltip {
+    display: none; /* Hide hover tooltips on mobile */
+  }
+
+  /* Show tooltips on long press or add a click-to-show alternative */
+  .clearanceTypesDisplay {
+    position: relative;
+  }
+
+  .clearanceTypesDisplay:active .multipleClearanceTooltip {
+    display: block;
+  }
+}
+
+/* Improve modal scrolling on mobile */
+@media (max-width: 768px) {
+  .IIRViewModalContent {
+    margin: 10px;
+    max-height: calc(100vh - 40px);
+  }
+
+  .IIRViewModalBody {
+    max-height: calc(100vh - 200px);
+    padding-right: 10px;
+  }
+
+  /* Custom scrollbar for modal body */
+  .IIRViewModalBody::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .IIRViewModalBody::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 2px;
+  }
+}
+
+/* Responsive improvements for modal tables */
+@media (max-width: 768px) {
+  .IIRModalTable {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .IIRModalTable thead,
+  .IIRModalTable tbody,
+  .IIRModalTable th,
+  .IIRModalTable td,
+  .IIRModalTable tr {
+    display: block;
+  }
+
+  .IIRModalTable thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .IIRModalTable tr {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+  }
+
+  .IIRModalTable td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    margin-bottom: 5px;
+  }
+
+  .IIRModalTable td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+}
+
+/* Add data-labels to your modal table cells in JSX */
+/* You'll need to update your JSX to add data-label attributes to table cells */
